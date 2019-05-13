@@ -19,12 +19,27 @@ namespace move_picture
 
         private void button1_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+            if (pictureBox1.Location.X + 5 < ClientRectangle.Width - pictureBox1.Width)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(ClientRectangle.Width - pictureBox1.Width, pictureBox1.Location.Y);
+            }
         }
+           
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+            if (pictureBox1.Location.X - 50 > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 50, pictureBox1.Location.Y);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(0, pictureBox1.Location.Y);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -108,7 +123,14 @@ namespace move_picture
 
         private void button16_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 20, pictureBox1.Location.Y);
+            if (pictureBox1.Location.X - 50 > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 50, pictureBox1.Location.Y);
+            }
+            else
+            {
+                pictureBox1.Location = new Point(0, pictureBox1.Location.Y);
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -120,5 +142,6 @@ namespace move_picture
         {
             pictureBox1.Location = new Point(pictureBox1.Location.X + 20, pictureBox1.Location.Y);
         }
+
     }
 }
